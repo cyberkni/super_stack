@@ -11,7 +11,7 @@ fi
 git_repo=$2
 SYS_PKGS="build-essential zlib1g zlib1g-dev libxml2 libxml2-dev libxslt-dev \
 sqlite3 libsqlite3-dev locate git-core curl wget openssh-server openssh-client \
-ufw"
+ufw vim"
 RUBY_PKGS="ruby1.8-dev ruby1.8 ri1.8 rdoc1.8 irb1.8 libreadline-ruby1.8 \
 libruby1.8 libopenssl-ruby rubygems libopenssl-ruby"
 SERVICE_PKGS="libapache2-mod-passenger apache2 apache2-utils mysql-common \
@@ -21,7 +21,7 @@ PUBLIC_SERVICES="ssh http https"
 
 # Install system packages
 apt-get update
-apt-get -y install $PKGS $RUBY_PKGS $SERVICE_PKGS
+apt-get -y install $SYS_PKGS $RUBY_PKGS $SERVICE_PKGS
 
 # Install rubygems
 gem sources -a http://gems.github.com
