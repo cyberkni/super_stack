@@ -46,7 +46,7 @@ git clone ${git_repo} ${domain}
 sudo chown www-data:www-data /var/app/${domain}/config/environment.rb
 sudo echo "<VirtualHost *:80>
     ServerName ${domain}
-    DocumentRoot /var/app/domain/public
+    DocumentRoot /var/app/${domain}/public
 </VirtualHost>" >> /etc/apache2/sites-available/${domain}
 a2ensite ${domain}
 /etc/init.d/apache2 restart
