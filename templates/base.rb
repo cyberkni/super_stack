@@ -63,7 +63,6 @@ end
 
 load_template('vendor/plugins/super_stack/templates/auth.rb') if yes?('Do you want authenticated users?')
 
-
 load_template('vendor/plugins/super_stack/templates/jquery.rb') if yes?('Do you want to install jQuery?')
 
 load_template("vendor/plugins/authlogic_bundle/templates/monitor.rb") if yes?("Do you want to include bundled monitor suite? (y/n)")
