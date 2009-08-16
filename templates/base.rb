@@ -94,3 +94,4 @@ if yes?('Do you want to vendor your gems?')
 end
 
 log 'you will need to update the email info in config/notify.yml and add additional info to get action_mailer setup in config/environments/production.rb'
+log 'you will also want to follow the active scaffold setup instructions if you are using it: http://activescaffold.com/tutorials/getting-started'
