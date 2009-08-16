@@ -1,0 +1,22 @@
+= Super Stack
+
+This set of templates allows you to quickly set up a pretty standard rails environment with a few nifty options.  This is a "soup-to-nuts" setup, at least if you use the build_server.sh script...
+
+Super Stack makes extensive use of the authlogic_bundle and app_lego template setups.  Take a look at them for dependency issues. (Though we'll install all dependencies anyway.)
+
+== Installation
+
+If you have a brand new Ubuntu (or other Debian-based distro) install:
+
+  $ ./build_server.sh
+  $ rails <your-app> -m http://github.com/cyberkni/superstack/raw/master/templates/remote.rb
+
+If you want to start a new rails app and already have your server all set up:
+
+  $ rails <your-app> -m http://github.com/cyberkni/superstack/raw/master/templates/remote.rb
+
+If you have an existing rails app (and likely already have your server set up 'just so'):
+
+  $ cd <your-app>
+  $ git submodule add git://github.com/cyberkni/super_stack.git vendor/plugins/super_stack
+  $ rake rails:template LOCATION=vendor/plugins/super_stack/templates/base.rb
