@@ -71,7 +71,7 @@ load_template("vendor/plugins/authlogic_bundle/templates/monitor.rb") if yes?("D
 
 load_template("vendor/plugins/super_stack/templates/gmail.rb") if yes?('Do you plan to send mail through GMail?')
 
-load_template("vendor/plugins/super_stack/templates/grav.rb") if yes?('Do you want to use Gravitars for your users?')
+load_template("vendor/plugins/super_stack/templates/grav.rb") if yes?('Do you want to use Gravatars for your users?')
 
 load_template("vendor/plugins/super_stack/templates/mobile.rb") if yes?('Will this app be accessed by mobiles?')
 
