@@ -8,12 +8,12 @@ Super Stack makes extensive use of the authlogic_bundle and app_lego template se
 
 If you have a brand new Ubuntu (or other Debian-based distro) install:
 
-  $ ./build_server.sh
-  $ rails <your-app> -m http://github.com/cyberkni/superstack/raw/master/templates/remote.rb
+  $ curl http://github.com/cyberkni/super_stack/raw/master/build_server.sh > build_server.sh && chmod 755 build_server.sh && ./build_server.sh
+  $ rails <your-app> -m http://github.com/cyberkni/super_stack/raw/master/templates/remote.rb
 
 If you want to start a new rails app and already have your server all set up:
 
-  $ rails <your-app> -m http://github.com/cyberkni/superstack/raw/master/templates/remote.rb
+  $ rails <your-app> -m http://github.com/cyberkni/super_stack/raw/master/templates/remote.rb
 
 If you have an existing rails app (and likely already have your server set up 'just so'):
 
