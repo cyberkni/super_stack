@@ -8,4 +8,4 @@ file_inject 'app/models/user.rb', 'class User < ActiveRecord::Base', <<-GRAV
 GRAV
 
 git :add => '.'
-git :commit => "-a -m 'Added support for Gravitars'"
+git :commit => "-a -m 'Added support for Gravatars'"

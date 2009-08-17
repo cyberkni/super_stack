@@ -9,7 +9,6 @@ gem 'remarkable_rails', :lib => false, :version => '>=3.1.8', :env => 'test'
 gem 'notahat-machinist', :lib => false,
   :source => 'http://gems.github.com', :env => 'test'
 
- 
 rake 'gems:install', :sudo => true, :env => 'test'
  
 generate :rspec
@@ -120,8 +119,7 @@ require 'declarative_authorization/maintenance'
 include Authorization::Maintenance
  
 CODE
- 
- 
+
 if git?
   git :submodule => "init"
   git :submodule => "update"
