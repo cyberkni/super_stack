@@ -4,6 +4,9 @@ gem 'twitter4r', :lib => 'twitter'
 #twibot
 gem 'twibot', :lib => false, :source => 'http://gems.github.com'
 
+gem 'bhauman-twroute', :lib => 'twroute', :source => 'http://gems.github.com'
+# in theory there should be config options for twroute here too...
+
 rake 'gems:install', :sudo => true
 
 twitter_user = ask('What is the username your Twitter bot will be using?')
