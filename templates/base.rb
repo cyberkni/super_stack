@@ -54,6 +54,8 @@ if yes?('Do you want to vendor Rails (2-3-stable)?')
   git :commit => "-a -m 'Pinned Rails to branch 2-3-stable'"
 end
 
+gem 'rack'
+
 if yes?('Will you need to be doing crazy :has_many :through nestings?')
   plugin 'nested_has_many_through',
     :git => 'git://github.com/ianwhite/nested_has_many_through.git'
