@@ -8,6 +8,8 @@ gem 'remarkable_activerecord', :lib => false, :version => '>=3.1.8', :env => 'te
 gem 'remarkable_rails', :lib => false, :version => '>=3.1.8', :env => 'test'
 gem 'notahat-machinist', :lib => false,
   :source => 'http://gems.github.com', :env => 'test'
+gem 'thoughtbot-shoulda', :lib => false, :version => '>=2.10.1',
+  :source => 'http://gems.github.com', :env => 'test'
 
 rake 'gems:install', :sudo => true, :env => 'test'
  
