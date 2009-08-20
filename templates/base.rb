@@ -41,15 +41,8 @@ git :add => "."
 git :commit => "-a -m 'Setting up a new rails app. Copy config/database.yml.sample to config/database.yml and customize.'"
 
 if yes?('Do you want to vendor Rails (2-3-stable)?')
-  run 'git submodule add git://github.com/rails/rails.git vendor/rails'
-  git :add => 'vendor/rails'
-  git :commit => "-a -m 'Vendored Rails edge as a submodule.'"
 
-  inside('vendor/rails') do
-    run 'git checkout origin/2-3-stable'
-  end
-
-  run 'rm vendor/rails/.git'
+  run 'rake rails:freeze:edge RELEASE=2.3.3'
 
   git :commit => "-a -m 'Pinned Rails to branch 2-3-stable'"
 end
