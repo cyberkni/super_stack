@@ -40,11 +40,11 @@ log "initialized", "application structure"
 git :add => "."
 git :commit => "-a -m 'Setting up a new rails app. Copy config/database.yml.sample to config/database.yml and customize.'"
 
-if yes?('Do you want to vendor Rails (2-3-stable)?')
+if yes?('Do you want to vendor Rails (2-3-2)?')
 
-  run 'rake rails:freeze:edge RELEASE=2.3.3'
+  run 'rake rails:freeze:edge RELEASE=2.3.2'
 
-  git :commit => "-a -m 'Pinned Rails to branch 2-3-stable'"
+  git :commit => "-a -m 'Pinned Rails to branch 2-3-2'"
 end
 
 gem 'rack'
