@@ -49,6 +49,7 @@ end
 
 gem 'rack'
 rake 'gems:install', :sudo => true
+run 'touch log/development.log && chmod 666 log/development.log'
 
 if yes?('Will you need to be doing crazy :has_many :through nestings?')
   plugin 'nested_has_many_through',
