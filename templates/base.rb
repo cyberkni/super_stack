@@ -85,7 +85,7 @@ end
 load_template("http://github.com/cyberkni/super_stack/raw/master/templates/whenever.rb") if yes?('Will you need to be running cron jobs for your app?')
 
 
-run 'sudo gem update'
+#run 'sudo gem update'
 
 if yes?('Do you want to vendor your gems?')
   rake 'gems:unpack:dependencies'
