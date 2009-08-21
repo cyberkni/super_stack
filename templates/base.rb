@@ -3,8 +3,6 @@
 # remove tmp dirs
 run "rmdir tmp/{pids,sessions,sockets,cache}"
 
-# remove unnecessary stuff
-run "rm README log/*.log public/index.html public/images/rails.png"
 
 # keep empty dirs
 run("find . \\( -type d -empty \\) -and \\( -not -regex ./\\.git.* \\) -exec touch {}/.gitignore \\;")
@@ -94,5 +92,12 @@ if yes?('Do you want to vendor your gems?')
   git :add => '.'
   git :commit => "-a -m 'Vendored gems'"
 end
+
+
+# remove unnecessary stuff
+run "rm README log/*.log public/index.html public/images/rails.png"
+git :add => '.'
+git :commit => "-a -m 'removed extraneous stuff'"
+
 log 'you will need to update the email info in config/notify.yml and add additional info to get action_mailer setup in config/environments/production.rb'
 log 'you will also want to follow the active scaffold setup instructions if you are using it: http://activescaffold.com/tutorials/getting-started'
