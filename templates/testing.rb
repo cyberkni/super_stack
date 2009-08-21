@@ -27,7 +27,6 @@ require 'shoulda'
 require 'remarkable_rails'
 require File.expand_path(File.dirname(__FILE__) + '/blueprints'
 CODE
-end
  
 #file 'spec/spec.opts', <<-CODE
 #--colour
