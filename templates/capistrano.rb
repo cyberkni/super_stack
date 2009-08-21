@@ -1,6 +1,6 @@
 # Lovingly borrowed from http://frozenplague.net/2008/09/ubuntu-rails-apache-passenger-capistrano-you/
 
-SOURCE = "vendor/plugins/authlogic_bundle" unless defined? SOURCE
+SOURCE = "vendor/plugins/super_stack" unless defined? SOURCE
 load_template("#{SOURCE}/templates/helper.rb") unless self.respond_to? :file_inject
 
 gem 'capistrano', :lib => false
