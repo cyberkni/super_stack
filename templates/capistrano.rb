@@ -32,7 +32,7 @@ deployment << "set :deploy_to, '#{deploy_to}'"
 file_append('config/deploy.rb', deployment.join("/n"))
 
 if yes?('Does your webserver run Passenger (mod_rails)?')
-  file_append('config/deploy.rb'), <<-DEP
+  file_append('config/deploy.rb', <<-DEP
 
 namespace :passenger do
   task :restart do
@@ -47,7 +47,7 @@ namespace :deploy do
  end
 
 after :deploy, "passenger:restart
-DEP
+DEP)
 end
 
 git :add => '.'
