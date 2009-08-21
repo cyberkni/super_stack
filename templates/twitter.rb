@@ -6,8 +6,8 @@ gem 'rubigen'
 
 #twibot
 gem 'twibot', :lib => false, :source => 'http://gems.github.com'
-
-gem 'bhauman-twroute', :lib => 'twroute', :source => 'http://gems.github.com'
+#gem 'sqlite-ruby'
+#gem 'bhauman-twroute', :lib => 'twroute', :source => 'http://gems.github.com'
 # in theory there should be config options for twroute here too...
 
 rake 'gems:install', :sudo => true
