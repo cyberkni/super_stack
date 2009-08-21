@@ -19,7 +19,15 @@ rake 'gems:install', :sudo => true, :env => 'test'
 generate :rspec
 
 # remove test dir
-git :rm => '-r test'
+if yes?('Do you want to get rid of the test directory entirely?')
+  git :rm => '-r test'
+else
+  file_inject 'test/test_helper.rb', "require 'spec/rails'", <<-CODE
+require 'shoulda'
+require 'remarkable_rails'
+require File.expand_path(File.dirname(__FILE__) + '/blueprints'
+CODE
+end
  
 file 'spec/spec.opts', <<-CODE
 --colour
@@ -30,10 +38,10 @@ file 'spec/spec.opts', <<-CODE
 CODE
  
 file_inject 'spec/spec_helper.rb', "require 'spec/rails'", <<-CODE
+require 'shoulda'
 require 'remarkable_rails'
 require File.expand_path(File.dirname(__FILE__) + '/blueprints'
 CODE
- 
 ##############################
 # Cucumber
 ##############################

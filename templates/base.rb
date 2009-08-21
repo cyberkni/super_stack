@@ -84,16 +84,14 @@ end
 
 load_template("vendor/plugins/super_stack/templates/whenever.rb") if yes?('Will you need to be running cron jobs for your app?')
 
+load_template('vendor/plugins/super_stack/templates/capistrano.rb') if yes?('Are you going to use Capistrano for deployment?')
 
-#run 'sudo gem update'
+run 'sudo gem update'
 
 if yes?('Do you want to vendor your gems?')
   rake 'gems:unpack:dependencies'
   git :add => '.'
   git :commit => "-a -m 'Vendored gems'"
 end
-
-load_template('vendor/plugins/super_stack/templates/capistrano.rb') if yes?('Are you going to use Capistrano for deployment?')
-
 log 'you will need to update the email info in config/notify.yml and add additional info to get action_mailer setup in config/environments/production.rb'
 log 'you will also want to follow the active scaffold setup instructions if you are using it: http://activescaffold.com/tutorials/getting-started'
