@@ -57,10 +57,9 @@ if yes?('Will you need to be doing crazy :has_many :through nestings?')
 end
 
 load_template('http://github.com/cyberkni/super_stack/raw/master/templates/auth.rb') if yes?('Do you want authenticated users?')
+load_template("vendor/plugins/authlogic_bundle/templates/monitor.rb") if yes?("Do you want to include bundled monitor suite? (y/n)")
 
 load_template('http://github.com/cyberkni/super_stack/raw/master/templates/jquery.rb') if yes?('Do you want to install jQuery?')
-
-load_template("vendor/plugins/authlogic_bundle/templates/monitor.rb") if yes?("Do you want to include bundled monitor suite? (y/n)")
 
 #misc
 
