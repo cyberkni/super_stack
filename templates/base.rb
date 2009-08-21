@@ -58,7 +58,7 @@ if yes?('Will you need to be doing crazy :has_many :through nestings?')
   git :commit => "-a -m 'Added support nested has_many through relationships'"
 end
 
-load_template('vendor/plugins/super_stack/templates/testing.rb') if yes?('Do you want to install RSpec, Cucumber, and autotest?')
+load_template('vendor/plugins/super_stack/templates/testing.rb') if yes?('Do you want to install Shoulda, Cucumber, and autotest?')
 load_template('vendor/plugins/super_stack/templates/auth.rb') if yes?('Do you want authenticated users?')
 load_template("vendor/plugins/authlogic_bundle/templates/monitor.rb") if yes?("Do you want to include bundled monitor suite? (y/n)")
 

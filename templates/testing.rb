@@ -4,8 +4,8 @@ load_template("#{SOURCE}/templates/helper.rb") unless self.respond_to? :file_inj
 ##############################
 # RSpec
 ##############################
-gem 'rspec', :lib => false, :version => '>= 1.2.8', :env => 'test'
-gem 'rspec-rails', :lib => false, :version => '>= 1.2.7.1', :env => 'test'
+#gem 'rspec', :lib => false, :version => '>= 1.2.8', :env => 'test'
+#gem 'rspec-rails', :lib => false, :version => '>= 1.2.7.1', :env => 'test'
 gem 'remarkable', :lib => false, :version => '>=3.1.8', :env => 'test'
 gem 'remarkable_activerecord', :lib => false, :version => '>=3.1.8', :env => 'test'
 gem 'remarkable_rails', :lib => false, :version => '>=3.1.8', :env => 'test'
@@ -16,32 +16,32 @@ gem 'thoughtbot-shoulda', :lib => false, :version => '>=2.10.1',
 
 rake 'gems:install', :sudo => true, :env => 'test'
  
-generate :rspec
+#generate :rspec
 
 # remove test dir
-if yes?('Do you want to get rid of the test directory entirely?')
-  git :rm => '-r test'
-else
-  file_inject 'test/test_helper.rb', "require 'spec/rails'", <<-CODE
+#if yes?('Do you want to get rid of the test directory entirely?')
+#  git :rm => '-r test'
+#else
+file_inject 'test/test_helper.rb', "require 'test_help'", <<-CODE
 require 'shoulda'
 require 'remarkable_rails'
 require File.expand_path(File.dirname(__FILE__) + '/blueprints'
 CODE
 end
  
-file 'spec/spec.opts', <<-CODE
---colour
---format progress
---format html:coverage/spec.html
---loadby mtime
---reverse
-CODE
+#file 'spec/spec.opts', <<-CODE
+#--colour
+#--format progress
+#--format html:coverage/spec.html
+#--loadby mtime
+#--reverse
+#CODE
  
-file_inject 'spec/spec_helper.rb', "require 'spec/rails'", <<-CODE
-require 'shoulda'
-require 'remarkable_rails'
-require File.expand_path(File.dirname(__FILE__) + '/blueprints'
-CODE
+#file_inject 'spec/spec_helper.rb', "require 'spec/rails'", <<-CODE
+#require 'shoulda'
+#require 'remarkable_rails'
+#require File.expand_path(File.dirname(__FILE__) + '/blueprints'
+#CODE
 ##############################
 # Cucumber
 ##############################
@@ -63,8 +63,8 @@ rake 'gems:install', :sudo => true, :env => 'test'
 generate :cucumber
  
 # Write gem config to 'cucumber' environment for cucumber >=0.3.8
-gem 'bmabey-email_spec', :lib => 'email_spec', :version => '>=0.2.1',
-  :source => 'http://gems.github.com', :env => 'cucumber'
+#gem 'bmabey-email_spec', :lib => 'email_spec', :version => '>=0.2.1',
+#  :source => 'http://gems.github.com', :env => 'cucumber'
  
 file 'cucumber.yml', <<-CODE
 default: -r features features
@@ -76,20 +76,20 @@ file_append 'features/support/env.rb', <<-CODE
 require 'email_spec/cucumber'
 CODE
  
-generate :email_spec
+#generate :email_spec
  
 file 'features/step_definitions/custom_email_steps.rb', <<-CODE
 CODE
  
-file_inject 'spec/spec_helper.rb', "require 'spec/rails'", <<-CODE
-require 'email_spec/helpers'
-require 'email_spec/matchers'
-CODE
+#file_inject 'spec/spec_helper.rb', "require 'spec/rails'", <<-CODE
+#require 'email_spec/helpers'
+#require 'email_spec/matchers'
+#CODE
  
-file_inject 'spec/spec_helper.rb', "Spec::Runner.configure do |config|", <<-CODE
-  config.include(EmailSpec::Helpers)
-  config.include(EmailSpec::Matchers)
-CODE
+#file_inject 'spec/spec_helper.rb', "Spec::Runner.configure do |config|", <<-CODE
+#  config.include(EmailSpec::Helpers)
+#  config.include(EmailSpec::Matchers)
+#CODE
  
 ##############################
 # RCov & Autotest
@@ -103,7 +103,7 @@ gem 'carlosbrando-autotest-notification', :lib => 'autotest_notification', :vers
 rake 'gems:install', :sudo => true, :env => 'test'
  
 file 'spec/rcov.opts', <<-CODE
---exclude "spec/*,gems/*,features/*"
+--exclude "gems/*,features/*"
 --rails
 --aggregate "coverage.data"
 CODE
@@ -136,6 +136,6 @@ CODE
 if git?
   git :submodule => "init"
   git :submodule => "update"
-  git :add => "config lib script spec features cucumber.yml"
+  git :add => "config lib script features cucumber.yml"
   git :commit => "-m 'setup testing suite'"
 end
