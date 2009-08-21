@@ -47,8 +47,8 @@ if yes?('Do you want to vendor Rails (2-3-3)?')
   git :commit => "-a -m 'Pinned Rails to branch 2-3-3'"
 end
 
-gem 'rack'
-gem 'sqlite3-ruby'
+gem 'rack', :lib => false
+gem 'sqlite3-ruby', :lib => false
 rake 'gems:install', :sudo => true
 
 if yes?('Will you need to be doing crazy :has_many :through nestings?')
