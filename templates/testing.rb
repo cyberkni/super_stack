@@ -1,3 +1,6 @@
+SOURCE = "vendor/plugins/super_stack" unless defined? SOURCE
+load_template("#{SOURCE}/templates/helper.rb") unless self.respond_to? :file_inject
+
 ##############################
 # RSpec
 ##############################
