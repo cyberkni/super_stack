@@ -107,9 +107,6 @@ file 'spec/rcov.opts', <<-CODE
 --aggregate "coverage.data"
 CODE
  
-run 'an-install'
-#run 'an-uninstall'
- 
 file_append 'config/environments/test.rb', <<-CODE
  
 ENV['AUTOFEATURE'] = "true"

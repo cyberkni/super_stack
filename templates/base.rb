@@ -1,9 +1,5 @@
 # This script owes MUCH to app_lego and authlogic_bundle
 
-# remove tmp dirs
-run "rmdir tmp/{pids,sessions,sockets,cache}"
-
-
 # keep empty dirs
 run("find . \\( -type d -empty \\) -and \\( -not -regex ./\\.git.* \\) -exec touch {}/.gitignore \\;")
 
@@ -96,6 +92,11 @@ end
 
 # remove unnecessary stuff
 run "rm README log/*.log public/index.html public/images/rails.png"
+
+# remove tmp dirs
+run "rmdir tmp/{pids,sessions,sockets,cache}"
+
+
 git :add => '.'
 git :commit => "-a -m 'removed extraneous stuff'"
 
