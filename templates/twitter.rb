@@ -2,6 +2,7 @@
 gem 'twitter4r', :lib => 'twitter'
 
 gem 'daemons'
+gem 'rubigen'
 
 #twibot
 gem 'twibot', :lib => false, :source => 'http://gems.github.com'
