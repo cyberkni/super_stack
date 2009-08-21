@@ -1,3 +1,6 @@
+gem 'authlogic', :sudo => true
+rake 'gems:install'
+
 plugin 'authlogic_bundle',
   :git => 'git://github.com/tsechingho/authlogic_bundle.git'
 
