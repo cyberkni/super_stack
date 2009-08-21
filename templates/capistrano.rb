@@ -47,7 +47,8 @@ namespace :deploy do
  end
 
 after :deploy, "passenger:restart
-DEP)
+DEP
+)
 end
 
 git :add => '.'
