@@ -56,23 +56,23 @@ if yes?('Will you need to be doing crazy :has_many :through nestings?')
   git :commit => "-a -m 'Added support nested has_many through relationships'"
 end
 
-load_template('vendor/plugins/super_stack/templates/auth.rb') if yes?('Do you want authenticated users?')
+load_template('http://github.com/cyberkni/super_stack/raw/master/templates/auth.rb') if yes?('Do you want authenticated users?')
 
-load_template('vendor/plugins/super_stack/templates/jquery.rb') if yes?('Do you want to install jQuery?')
+load_template('http://github.com/cyberkni/super_stack/raw/master/templates/jquery.rb') if yes?('Do you want to install jQuery?')
 
 load_template("vendor/plugins/authlogic_bundle/templates/monitor.rb") if yes?("Do you want to include bundled monitor suite? (y/n)")
 
 #misc
 
-load_template("vendor/plugins/super_stack/templates/gmail.rb") if yes?('Do you plan to send mail through GMail?')
+load_template("http://github.com/cyberkni/super_stack/raw/master/templates/gmail.rb") if yes?('Do you plan to send mail through GMail?')
 
-load_template("vendor/plugins/super_stack/templates/grav.rb") if yes?('Do you want to use Gravatars for your users?')
+load_template("http://github.com/cyberkni/super_stack/raw/master/templates/grav.rb") if yes?('Do you want to use Gravatars for your users?')
 
-load_template("vendor/plugins/super_stack/templates/mobile.rb") if yes?('Will this app be accessed by mobiles?')
+load_template("http://github.com/cyberkni/super_stack/raw/master/templates/mobile.rb") if yes?('Will this app be accessed by mobiles?')
 
-load_template("vendor/plugins/super_stack/templates/hoptoad.rb") if yes?('Will you be using Hoptoad for your exception notification?')
+load_template("http://github.com/cyberkni/super_stack/raw/master/templates/hoptoad.rb") if yes?('Will you be using Hoptoad for your exception notification?')
   
-load_template("vendor/plugins/super_stack/templates/twitter.rb") if yes?('Will this be a Twitter app?')
+load_template("http://github.com/cyberkni/super_stack/raw/master/templates/twitter.rb") if yes?('Will this be a Twitter app?')
 
 if yes?('Do you want to use Active Scaffold for your admin interface?')
   plugin 'active_scaffold',
@@ -81,9 +81,9 @@ if yes?('Do you want to use Active Scaffold for your admin interface?')
   git :commit => "-a -m 'Added support for Active Scaffold'"
 end
 
-load_template("vendor/plugins/super_stack/templates/whenever.rb") if yes?('Will you need to be running cron jobs for your app?')
+load_template("http://github.com/cyberkni/super_stack/raw/master/templates/whenever.rb") if yes?('Will you need to be running cron jobs for your app?')
 
-load_template('vendor/plugins/super_stack/templates/testing.rb') if yes?('Do you want to install RSpec, Cucumber, and autotest?')
+load_template('http://github.com/cyberkni/super_stack/raw/master/templates/testing.rb') if yes?('Do you want to install RSpec, Cucumber, and autotest?')
 
 run 'sudo gem update'
 
@@ -93,7 +93,7 @@ if yes?('Do you want to vendor your gems?')
   git :commit => "-a -m 'Vendored gems'"
 end
 
-load_template('vendor/plugins/super_stack/templates/capistrano.rb') if yes?('Are you going to use Capistrano for deployment?')
+load_template('http://github.com/cyberkni/super_stack/raw/master/templates/capistrano.rb') if yes?('Are you going to use Capistrano for deployment?')
 
 log 'you will need to update the email info in config/notify.yml and add additional info to get action_mailer setup in config/environments/production.rb'
 log 'you will also want to follow the active scaffold setup instructions if you are using it: http://activescaffold.com/tutorials/getting-started'

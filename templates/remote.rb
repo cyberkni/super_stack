@@ -1,4 +1,1 @@
-plugin 'super_stack',
-  :git => 'git://github.com/cyberkni/super_stack.git'
-
-load_template("vendor/plugins/super_stack/templates/base.rb")
+load_template("http://github.com/cyberkni/super_stack/raw/master/templates/base.rb")
