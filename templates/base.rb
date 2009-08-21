@@ -58,6 +58,7 @@ if yes?('Will you need to be doing crazy :has_many :through nestings?')
   git :commit => "-a -m 'Added support nested has_many through relationships'"
 end
 
+load_template('http://github.com/cyberkni/super_stack/raw/master/templates/testing.rb') if yes?('Do you want to install RSpec, Cucumber, and autotest?')
 load_template('http://github.com/cyberkni/super_stack/raw/master/templates/auth.rb') if yes?('Do you want authenticated users?')
 load_template("vendor/plugins/authlogic_bundle/templates/monitor.rb") if yes?("Do you want to include bundled monitor suite? (y/n)")
 
@@ -84,7 +85,6 @@ end
 
 load_template("http://github.com/cyberkni/super_stack/raw/master/templates/whenever.rb") if yes?('Will you need to be running cron jobs for your app?')
 
-load_template('http://github.com/cyberkni/super_stack/raw/master/templates/testing.rb') if yes?('Do you want to install RSpec, Cucumber, and autotest?')
 
 run 'sudo gem update'
 
