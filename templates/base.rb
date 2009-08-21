@@ -48,6 +48,7 @@ if yes?('Do you want to vendor Rails (2-3-3)?')
 end
 
 gem 'rack'
+gem 'sqlite3-ruby'
 rake 'gems:install', :sudo => true
 
 if yes?('Will you need to be doing crazy :has_many :through nestings?')
