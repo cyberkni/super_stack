@@ -29,7 +29,7 @@ deployment << "set :db, '#{db}', :primary => true"
 deploy_to = ask('What is the full path you deploy to? (ie /home/deploy/app)')
 deployment << "set :deploy_to, '#{deploy_to}'"
 
-file_append('config/deploy.rb'), deployment.join("/n")
+file_append('config/deploy.rb', deployment.join("/n"))
 
 if yes?('Does your webserver run Passenger (mod_rails)?')
   file_append('config/deploy.rb'), <<-DEP
